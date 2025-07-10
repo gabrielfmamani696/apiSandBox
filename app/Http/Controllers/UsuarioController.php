@@ -66,12 +66,12 @@ class UsuarioController extends Controller
         // Usuarios y sus ordenes respectivas
 
 
-        $usuarios = Usuario::with('ordenes')->get();
-        return response()->json($usuarios);
-
-
-        // $usuarios = Orden::all();
+        // $usuarios = Usuario::with('ordenes')->get();
         // return response()->json($usuarios);
+
+
+        $usuarios = Orden::all();
+        return response()->json($usuarios);
     }
 
     /**

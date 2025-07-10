@@ -24,3 +24,7 @@ $router->get('/usuarios/ordenes', [
 // $router->get('/usuarios/{id}', [
 //     'uses'=>'UsuarioController@show'
 // ]);
+
+// use App\Http\Controllers\UserController;
+
+// Route::get('/user', [UserController::class, 'index']);
