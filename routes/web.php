@@ -21,6 +21,10 @@ $router->get('/usuarios/ordenes', [
     'uses'=>'UsuarioController@showAndOrdenes'
 ]);
 
+$router->get('/usuarios', [
+    'uses'=>'UsuarioController@showAll'
+]);
+
 // $router->get('/usuarios/{id}', [
 //     'uses'=>'UsuarioController@show'
 // ]);

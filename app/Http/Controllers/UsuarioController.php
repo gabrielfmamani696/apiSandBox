@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Orden;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UsuarioController extends Controller
 {
@@ -106,5 +107,40 @@ class UsuarioController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function showAll() {
+        // sacar a todos los ususarios
+        /* $usuario = DB::table('usuarios')->get(); */
+
+        // buscar a los usuarios cuyo atributo name sea igual a usuario
+        /* $usuario = DB::table('usuarios')->where('name', 'usuario')->get(); */
+
+        // buscar a los usuarios cuyo atributo name sea igual a usuario, pero que solo devuelva al primero
+        /* $usuario = DB::table('usuarios')->where('name', 'usuario')->first(); */
+
+        // buscar a los usuarios cuyo atributo name sea igual a usuario, que termine en algo, pero que solo devuelva al atributo name
+        /* $usuario = DB::table('usuarios')->where('name', 'ilike', 'usuario%')->value('name'); */
+
+        // buscar al usuario con id especifico
+        // $usuario = DB::table('usuarios')->find(2);
+        
+        // devuelve la columna especifica
+        // $usuario = DB::table('usuarios')->pluck('name');
+        
+        // devuelve la columna especifica
+        // $usuario = DB::table('usuarios')->pluck('name');
+
+        // se puede poner uns egundo nombre para acceder a estas tablas como llaves, n sirve
+        // $usuario = DB::table('usuarios')->pluck('nombre', 'name');
+        
+        // se puede contar el numero de usuarios
+        // $usuario = DB::table('usuarios')->count();
+
+        // se puede contar el numero de maximo de una columna
+        $usuario = DB::table('usuarios')->max('balance');
+
+
+        return response()->json($usuario);
     }
 }
