@@ -1,0 +1,4 @@
+SELECT * FROM comunes.memoriales
+WHERE id_recurso_alzada = 54665
+and id_motivo_memorial = 24
+ORDER BY id_recurso_alzada ASC 
